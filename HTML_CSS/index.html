@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@900&display=swap" rel="stylesheet">
+        <link href="style.css" rel='stylesheet'> 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/charts/chart-1/assets/css/chart-1.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            
+          <a class="navbar-brand"><img src="/IMAGES/LOGO.jpeg" height="70px"></a>
+          <a class="navbar-brand"><h5>Dashboard</h5 ></a>
+          
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <a class="navbar-brand"><i class="fa-solid fa-bell"></i></a>
+           <a class="navbar-brand">  
+          <div class="dropdown pb-4">
+            <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="data:image/jpeg;base64,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 " alt="hugenerd" width="30" height="30" class="rounded-circle">
+                <span class="d-none d-sm-inline mx-1">User</span>
+                
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+            
+
+        </a>
+
+            
+           
+          
+        </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                   
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0">
+                         <h5><i class="fa-solid fa-house"></i> Home</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                               <h5> <i class="fa-solid fa-table-columns"></i> Dashboard</h5> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <h5><i class="fa-solid fa-truck"></i> Orders</h5></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <h5><i class="fa-solid fa-money-bill"></i> Payment</h5></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <h5><i class="fa-solid fa-clipboard"></i> Planning</h5></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <h5><i class="fa-solid fa-gear"></i> Settings</h5></a>
+                        </li>
+                        <br>
+                        <div class="line"></div>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <h5><i class="fa-solid fa-circle-info"></i> Help</h5></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <h5><i class="fa-solid fa-right-from-bracket"></i> Logout</h5></a>
+                        </li> 
+                        
+
+                       
+                        
+                        
+                      
+                    </ul>
+                
+                   
+                   
+                </div>
+            </div>
+            <div class="col py-3">
+                <div class="container mt-5 mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card p-3 mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-solid fa-wallet"></i> </i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Balance</h5> 
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5 class="heading">$592.55 <BR> <span style="color: red;" >-0.89%</span></h5>
+                                    <div class="mt-5">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50"></div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-3 mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-solid fa-circle-dollar-to-slot"></i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Income</h6> 
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Product</span> </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5 class="heading">$149.39<br><span style="color: green">+6.25%</span></h5>
+                                    <div class="mt-5">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-3 mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-solid fa-piggy-bank"></i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Savings</h5> 
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5 class="heading">$79.20<br><span style="color: red;" >-1.25%</span></h5>
+                                    <div class="mt-5">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-3 mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-solid fa-money-bill"></i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Expenses</h6> 
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5 class="heading">$250.76<br><span style="color: green;" >+2.89%</span></h5>
+                                    <div class="mt-5">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                              <h5>Transactions</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li  class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-brands fa-facebook"></i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">facebook<span style="color: green;">+$98</span></h5>  
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+                            </li>
+                            <li  class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-brands fa-paypal"></i></div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Paypal  <span style="color: red;">-$52</span></h5>  
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+                            </li>
+                            <li  class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="fa-brands fa-airbnb"></i></div>
+                                        <div class="ms-2 c-details">
+                                            <h5 class="mb-0">Airbnb <span style="color: red;">-$15</span></h5>  
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Design</span> </div>
+                                </div>
+
+                            </li>
+                          
+                             
+
+                                
+                              
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card p-3 mb-2">
+                               <div class="d-flex justify-content-between">
+                                   <div class="d-flex flex-row align-items-center">
+                                      
+                                       <div class="ms-2 c-details">
+                                           <h5 class="mb-0">Planning</h5> 
+                                       </div>
+                                   </div>
+                                   <div class="badge"> <span>Design</span> </div>
+                               </div>
+                               <div class="mt-5">
+                                   <h6 class="heading">Buy a house<br>$800/<span style="color:green">$8080</span></h5>
+                                  
+                                       <div class="progress">
+                                           <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                       </div>
+                                       
+                               </div>
+                               <div class="mt-5">
+                                   <h6 class="heading">Visit to Japan<br>$500/<span style="color:green">$1500</span></h5>
+                                 
+                                       <div class="progress">
+                                           <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                       </div>
+                                                                   </div>
+                               
+                           </div>
+               
+
+                          
+                    </div>
+                </div>
+                
+                <!-- Chart 1 - Bootstrap Brain Component -->
+                <section class="py-3 py-md-5">
+                <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9 col-xl-8">
+                    <div class="card widget-card border-light shadow-sm">
+                        <div class="card-body p-4">
+                        <div class="d-block d-sm-flex align-items-center justify-content-between mb-3">
+                            <div class="mb-3 mb-sm-0">
+                            <h5 class="card-title widget-card-title">Money Flow</h5>
+                            </div>
+                            <div>
+                            <select class="form-select text-secondary border-light-subtle">
+                                <option value="1">March 2023</option>
+                                <option value="2">April 2023</option>
+                                <option value="3">May 2023</option>
+                                <option value="4">June 2023</option>
+                  </select>
+                </div>
+              </div>
+              <div id="bsb-chart-1"></div>
+              </div>
+              <div class="col py-3 ">
+       
+                
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+              
+            </div>
+    
+        </div>
+    </div>
+    
+</body>
+ <!-- Bootstrap -->
+ <script src="https://kit.fontawesome.com/8d8fed7e1c.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://unpkg.com/bs-brain@2.0.3/components/charts/chart-1/assets/controller/chart-1.js"></script>
+  </html>
